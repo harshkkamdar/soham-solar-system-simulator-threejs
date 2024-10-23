@@ -50,6 +50,7 @@ const IntroText: React.FC = () => {
           Solar System
         </span>
       </h1>
+      <p className='text-white text-sm'>A simulation of the solar system by <b>Soham Mehta</b></p>
     </motion.div>
   );
 };

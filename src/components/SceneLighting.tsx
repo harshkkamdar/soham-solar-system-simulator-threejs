@@ -4,7 +4,7 @@ const SceneLighting = () => {
             <ambientLight intensity={0.2} color={0xffffff} />
             <directionalLight
                 castShadow
-                intensity={1.0} // Bright enough to simulate sunlight, but you can tweak it
+                intensity={2.0} // Bright enough to simulate sunlight, but you can tweak it
                 position={[5, 0, 0]} // You would compute this based on the sun's current position
                 shadow-mapSize-width={2048} // Higher for better shadow quality
                 shadow-mapSize-height={2048} // Higher for better shadow quality

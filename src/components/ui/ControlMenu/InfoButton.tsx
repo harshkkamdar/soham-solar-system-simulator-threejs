@@ -20,17 +20,9 @@ const InfoButton = () => {
     <ModalContent>
       {(onClose) => (
         <>
-          <ModalHeader className="flex flex-col gap-1">Solar System Experiment by Chris Waitt</ModalHeader>
+          <ModalHeader className="flex flex-col gap-1">Solar System Simulation</ModalHeader>
           <ModalBody>
-            <p>Todo:</p>
-            <ul className="text-sm">
-              <li>Earths moon</li>
-              <li>Accurate Lighting</li>
-              <li>Accurate planet atmospheres</li>
-              <li>Clipping through objects</li>
-              <li>Bugs</li>
-            </ul>
-            <p>Read more about it on <a className="text-secondary" target="_blank" rel="noopener noreferrer" href="https://cwaitt.dev/projects/solar-system">my website</a>.</p>
+            <p>This is a simulation of the solar system using react, three.js and nextui</p>
           </ModalBody>
           <ModalFooter>
             <Button color="danger" variant="light" onPress={onClose}>
