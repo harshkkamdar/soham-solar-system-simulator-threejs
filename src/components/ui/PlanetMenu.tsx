@@ -49,7 +49,7 @@ const PlanetMenu: React.FC<PlanetMenuProps> = ({ planets }) => {
             key={planet.id} 
             variant='flat' 
             color='warning' 
-            size='sm' 
+            size='lg' 
             onClick={() => handleSelect(planet.name)}
             isDisabled={selectedPlanet?.id === planet.id}
           >
