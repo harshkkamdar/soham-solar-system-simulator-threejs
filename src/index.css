@@ -2,9 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    background-color: black;
+html {
+  background-color: transparent;
 }
-body{
-    background-color: black;
+
+body {
+  background-color: transparent;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: black;
 }

@@ -1,14 +1,22 @@
-// App.tsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SolarSystem from './components/SolarSystem';
+import Portfolio from './pages/Portfolio';
 import Providers from './Providers';
 
 function App() {
   return (
-    <Providers>
-      <div className='w-screen h-screen overflow-hidden'>
-        <SolarSystem />
-      </div>
-    </Providers>
+    <Router>
+      <Providers>
+        <Routes>
+          <Route path="/solar-system" element={
+            <div className='w-screen h-screen overflow-hidden'>
+              <SolarSystem />
+            </div>
+          } />
+          <Route path="/" element={<Portfolio />} />
+        </Routes>
+      </Providers>
+    </Router>
   );
 }
 
