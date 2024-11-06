@@ -39,7 +39,7 @@ const SpeedControl = () => {
           value={speedFactor}
           onChange={(value) => setSpeedFactor(Number(value))}
           orientation="vertical"
-          color='secondary'
+          color='warning'
           size="lg"
           className='h-[300px]'
       />

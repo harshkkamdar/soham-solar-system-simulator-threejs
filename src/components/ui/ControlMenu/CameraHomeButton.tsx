@@ -23,7 +23,7 @@ const CameraHomeButton = () => {
   return (
     <Button 
       isIconOnly 
-      color='secondary' 
+      color='warning' 
       variant='flat'
       isDisabled={isButtonDisabled} 
       onClick={moveToHome}

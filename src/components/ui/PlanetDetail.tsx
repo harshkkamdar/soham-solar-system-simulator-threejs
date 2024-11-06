@@ -37,7 +37,7 @@ const PlanetDetail: React.FC = () => {
           <h1 className='tracking-tight font-semibold text-7xl lg:text-8xl xl:text-8xl opacity-90'>
             {displayedPlanet ? displayedPlanet.name : ''}
           </h1>
-          <h4 className='tracking-tight text-2xl mb-5 ml-1 text-secondary font-semibold'>{displayedPlanet?.displayStats.classification}</h4>
+          <h4 className='tracking-tight text-2xl mb-5 ml-1 text-warning font-semibold'>{displayedPlanet?.displayStats.classification}</h4>
           <ul className='text-sm w-64 ml-2 hidden lg:block text-gray-200'>
             <li>
               <p>

@@ -11,7 +11,7 @@ const InfoButton = () => {
     <Button 
       isIconOnly 
       onPress={onOpen}
-      color='secondary' 
+      color='warning' 
       variant='flat'
     >
       <IconInfoCircle />
