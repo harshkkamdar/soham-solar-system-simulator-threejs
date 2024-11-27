@@ -40,14 +40,14 @@ const NavBar = () => {
               {section}
             </Button>
           ))}
-          <Link to="/solar-system">
+          {/* <Link to="/solar-system">
             <Button
               variant="light"
               className={`${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'}`}
             >
               Solar System
             </Button>
-          </Link>
+          </Link> */}
           {/* <Button
             isIconOnly
             variant="light"
