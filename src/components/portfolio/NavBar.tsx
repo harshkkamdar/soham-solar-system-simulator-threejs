@@ -6,7 +6,7 @@ import { useTheme } from '../../contexts/ThemeContext';
 
 const NavBar = () => {
   const { theme } = useTheme();
-//   const { theme, toggleTheme } = useTheme();
+  //   const { theme, toggleTheme } = useTheme();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -23,11 +23,11 @@ const NavBar = () => {
       className={`fixed top-0 left-0 right-0 z-50 ${theme === 'dark' ? 'bg-black/50' : 'bg-white/50'} backdrop-blur-sm border-b ${theme === 'dark' ? 'border-orange-500/20' : 'border-orange-300/20'}`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className={`text-xl font-bold ${theme === 'dark' ? 'text-white hover:text-orange-400' : 'text-black hover:text-orange-600'} transition-colors`}
         >
-        SM
+          SM
         </Link>
         <div className="flex items-center gap-6">
           {['about', 'experience', 'projects', 'extracurricular', 'contact'].map((section) => (
@@ -40,14 +40,13 @@ const NavBar = () => {
               {section}
             </Button>
           ))}
-          {/* <Link to="/solar-system">
-            <Button
-              variant="light"
-              className={`${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'}`}
-            >
-              Solar System
-            </Button>
-          </Link> */}
+          <Button
+            variant="light"
+            className={`${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'}`}
+            onClick={() => scrollToSection('solar-system-showcase')}
+          >
+            Solar System
+          </Button>
           {/* <Button
             isIconOnly
             variant="light"
