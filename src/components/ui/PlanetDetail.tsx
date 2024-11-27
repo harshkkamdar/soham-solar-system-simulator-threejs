@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSelectedPlanet } from '../../contexts/SelectedPlanetContext';
 import { useCameraContext } from '../../contexts/CameraContext';
+import GravSimulation from '../ui/GravitationalSimulation/GravSimulation';
 
 const PlanetDetail: React.FC = () => {
   const [selectedPlanet] = useSelectedPlanet();
@@ -103,6 +104,7 @@ const PlanetDetail: React.FC = () => {
                 </p>
               </li>
             </ul>
+            {displayedPlanet ? <GravSimulation planet={displayedPlanet} /> : null}
           </div>
         </motion.div>
       )}
