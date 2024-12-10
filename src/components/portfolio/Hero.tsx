@@ -16,7 +16,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-600"
+          className="text-5xl md:text-7xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500"
         >
           Soham Mehta
         </motion.h1>
@@ -26,7 +26,7 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className={`text-xl md:text-2xl ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-8`}
         >
-          Physics Student & Aspiring Quantum Computing Researcher
+          Physics Student & Aspiring Researcher
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
@@ -36,13 +36,13 @@ const Hero = () => {
         >
           <a 
             href="#contact" 
-            className="px-6 py-3 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-colors"
+            className="px-6 py-3 bg-orange-500 text-gray-200 rounded-full hover:bg-orange-600 transition-colors"
           >
             Download Resume
           </a>
           <a 
             href="#projects" 
-            className="px-6 py-3 border border-orange-600 rounded-full hover:bg-orange-600/10 transition-colors"
+            className="px-6 py-3 border border-orange-500 rounded-full hover:bg-orange-600/10 transition-colors"
           >
             View Projects
           </a>

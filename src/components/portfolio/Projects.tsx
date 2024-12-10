@@ -10,7 +10,35 @@ const projects = [
     description: "A comprehensive community service initiative focusing on robotics, environmental science, and animal welfare.",
     longDescription: "Led a multifaceted project that included building an autonomous robot (FRAM), conducting plant growth experiments, and surveying local dog populations. The project emphasized cleanliness, hygiene, and community service while applying scientific principles to real-world problems.",
     tech: ["Robotics", "Environmental Science", "Data Analysis", "Community Service"],
-    link: "https://drive.google.com/drive/folders/1-lPUPczIbSy6cpK2EJStY_WcogWGDbp8?usp=share_link"
+    link: "https://drive.google.com/drive/folders/1-lPUPczIbSy6cpK2EJStY_WcogWGDbp8?usp=share_link",
+    images: [
+      {
+        url: "/images/soham/scienceProject/1.jpg",
+        caption: "FRAM Robot prototype"
+      },
+      {
+        url: "/images/soham/scienceProject/2.jpg",
+        caption: "Plant growth experiment setup"
+      }
+    ],
+    sections: [
+      {
+        title: "Project Overview",
+        content: "Using the information on cow dung as a good fertilizer, we formed our hypothesis that dog faeces can be used for the same. We conducted extensive research and experiments to test this hypothesis while addressing community hygiene issues."
+      },
+      {
+        title: "FRAM Robot Development",
+        content: "We built an autonomous robot (FRAM) to help gather faeces samples safely and efficiently. The robot was designed to navigate urban environments and collect samples for our research."
+      },
+      {
+        title: "Experimental Process",
+        content: "We conducted controlled plant growth experiments using different soil compositions. This involved careful monitoring, data collection, and analysis of plant growth patterns over time."
+      },
+      {
+        title: "Community Impact",
+        content: "Our project addressed both environmental concerns and community hygiene issues, demonstrating practical applications of scientific principles in solving real-world problems."
+      }
+    ]
   },
   {
     title: "Interactive Solar System",
@@ -38,13 +66,13 @@ const Projects = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-20"
+      className="py-16"
     >
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-600">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
           Projects with Impact
         </h2>
-        <div className="grid gap-8">
+        <div className="space-y-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -53,41 +81,34 @@ const Projects = () => {
               transition={{ delay: index * 0.2, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className={`${theme === 'dark' ? 'bg-black/40' : 'bg-white'} border-2 border-orange-500/20`}>
-                <CardBody>
-                  <h3 className={`text-xl font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+              <Card className={`${theme === 'dark' ? 'bg-black/40' : 'bg-white'} border-2 border-yellow-500/20 hover:border-yellow-500/40 transition-colors`}>
+                <CardBody className="space-y-6">
+                  <h3 className={`text-2xl font-semibold ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
                     {project.title}
                   </h3>
-                  <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
+                  <p className={`text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 text-sm bg-orange-500/20 text-orange-300 rounded-full"
+                        className="px-3 py-1 text-sm bg-yellow-500/20 text-yellow-500 rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-4">
-                    <Button
-                      color="warning"
-                      variant="ghost"
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      Learn More
-                    </Button>
+                  <div className="flex pt-4">
                     {project.link && (
                       <Button
                         color="warning"
-                        variant="flat"
+                        variant="ghost"
                         as="a"
                         href={project.link}
                         target={project.link.startsWith('http') ? "_blank" : "_self"}
                       >
-                        View Project
+                        {project.title === "Collaborative Science Project" ? "View Details" : "Learn More"}
                       </Button>
                     )}
                   </div>
@@ -101,7 +122,13 @@ const Projects = () => {
         <ProjectModal
           isOpen={!!selectedProject}
           onClose={() => setSelectedProject(null)}
-          project={selectedProject}
+          project={{
+            title: selectedProject?.title,
+            description: selectedProject?.description,
+            longDescription: selectedProject?.longDescription,
+            tech: selectedProject?.tech,
+            images: selectedProject?.images?.map(image => image.url) || [],
+          }}
         />
       )}
     </motion.section>

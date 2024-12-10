@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { Button } from "@nextui-org/react";
 import { useTheme } from '../../contexts/ThemeContext';
 // import { IconSun, IconMoon } from '@tabler/icons-react';
+import { useState } from 'react';
 
 const NavBar = () => {
   const { theme } = useTheme();
   //   const { theme, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -29,8 +31,25 @@ const NavBar = () => {
         >
           SM
         </Link>
-        <div className="flex items-center gap-6">
-          {['about', 'experience', 'projects', 'extracurricular', 'contact'].map((section) => (
+
+        <button
+          className="lg:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <div className={`w-6 h-0.5 mb-1.5 ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}></div>
+          <div className={`w-6 h-0.5 mb-1.5 ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}></div>
+          <div className={`w-6 h-0.5 ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}></div>
+        </button>
+
+        <div className="hidden lg:flex items-center gap-6">
+        <Button
+            variant="light"
+            className={`${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'}`}
+            onClick={() => scrollToSection('solar-system-showcase')}
+          >
+            Solar System
+          </Button>
+          {['about', 'research', 'experience', 'projects', 'education', 'extracurricular', 'contact'].map((section) => (
             <Button
               key={section}
               variant="light"
@@ -40,13 +59,7 @@ const NavBar = () => {
               {section}
             </Button>
           ))}
-          <Button
-            variant="light"
-            className={`${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'}`}
-            onClick={() => scrollToSection('solar-system-showcase')}
-          >
-            Solar System
-          </Button>
+
           {/* <Button
             isIconOnly
             variant="light"
@@ -56,6 +69,34 @@ const NavBar = () => {
             {theme === 'dark' ? <IconSun className="h-5 w-5" /> : <IconMoon className="h-5 w-5" />}
           </Button> */}
         </div>
+
+        {isMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 p-4 flex flex-col gap-2 ${theme === 'dark' ? 'bg-black/50' : 'bg-white/90'} bg-black/90 backdrop-blur-sm">
+            <Button
+              variant="light"
+              className={`${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'}`}
+              onClick={() => {
+                scrollToSection('solar-system-showcase');
+                setIsMenuOpen(false);
+              }}
+            >
+              Solar System
+            </Button>
+            {['about', 'research', 'experience', 'projects', 'education', 'extracurricular', 'contact'].map((section) => (
+              <Button
+                key={section}
+                variant="light"
+                className={`capitalize ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'}`}
+                onClick={() => {
+                  scrollToSection(section);
+                  setIsMenuOpen(false);
+                }}
+              >
+                {section}
+              </Button>
+            ))}
+          </div>
+        )}
       </div>
     </motion.nav>
   );

@@ -1,48 +1,43 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
-import { Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody, Button } from "@nextui-org/react";
+import EnhancedProjectModal from './EnhancedProjectModal';
 
 const experiences = [
   {
-    title: "Research Co-author",
-    organization: "Midwestern State University, Physics Dept & JNIS",
+    title: "Intern",
+    organization: "Hindustan Electric Motors",
     period: "2023",
-    description: "Co-authored research on relativistic effects in damped harmonic oscillators",
+    description: "Worked on electric motor optimization and development",
     details: [
-      "Conducted research under Prof. Preet Sharma's guidance",
-      "Developed compact modeling equations for complex physical systems",
-      "Enhanced investigative and scientific writing skills",
-      "Established foundation for further exploration in the field"
-    ]
-  },
-  {
-    title: "Crisis Event Organizer",
-    organization: "International Youth Conference (JNIS)",
-    period: "2023",
-    description: "Led Crisis Department for pan-India MUN with 290+ delegates",
-    details: [
-      "Organized night crisis event for top 15 delegates",
-      "Managed logistics and event planning",
-      "Demonstrated leadership and organizational skills",
-      "Coordinated with international participants"
-    ]
-  },
-  {
-    title: "Python & C++ Programming",
-    organization: "ICAD Academy, Mumbai",
-    period: "2021",
-    description: "Completed intermediate level programming courses",
-    details: [
-      "Developed problem-solving skills",
-      "Learned to break down complex problems",
-      "Applied programming concepts to real-world scenarios",
-      "Enhanced logical thinking abilities"
+      "Led motor optimization project",
+      "Received management appreciation",
+      "Gained hands-on industry experience"
+    ],
+    link: "https://www.hindmotors.com/",
+    images: [
+      {
+        url: "public/images/soham/Internship/1.jpg",
+        caption: "Working on motor optimization"
+      }
+    ],
+    sections: [
+      {
+        title: "Project Overview",
+        content: "Led a significant motor optimization project at Hindustan Electric Motors, focusing on improving efficiency and performance."
+      },
+      {
+        title: "Key Responsibilities",
+        content: "Managed technical analysis, conducted performance testing, and collaborated with senior engineers on optimization strategies."
+      }
     ]
   }
 ];
 
 const Experience = () => {
   const { theme } = useTheme();
+  const [selectedExp, setSelectedExp] = useState<(typeof experiences)[0] | null>(null);
 
   return (
     <motion.section
@@ -51,11 +46,11 @@ const Experience = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-20"
+      className="py-16"
     >
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-600">
-          Professional Experience
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
+          Internship Experience
         </h2>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
@@ -66,16 +61,16 @@ const Experience = () => {
               transition={{ delay: index * 0.2, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className={`${theme === 'dark' ? 'bg-black/40' : 'bg-white'} border-2 border-orange-500/20`}>
-                <CardBody>
-                  <div className="flex flex-col md:flex-row justify-between mb-4">
+              <Card className={`${theme === 'dark' ? 'bg-black/40' : 'bg-white'} border-2 border-yellow-500/20 hover:border-yellow-500/40 transition-colors`}>
+                <CardBody className="space-y-6">
+                  <div className="flex flex-col md:flex-row justify-between mb-6">
                     <div>
-                      <h3 className={`text-xl font-semibold ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                      <h3 className={`text-2xl font-semibold ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
                         {exp.title}
                       </h3>
-                      <p className="text-orange-400">{exp.organization}</p>
+                      <p className="text-yellow-500 text-lg">{exp.organization}</p>
                     </div>
-                    <span className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                    <span className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
                       {exp.period}
                     </span>
                   </div>
@@ -89,12 +84,43 @@ const Experience = () => {
                       </li>
                     ))}
                   </ul>
+                  <div className="flex gap-4 mt-4">
+                    <Button 
+                      color="warning" 
+                      variant="ghost" 
+                      onPress={() => setSelectedExp(exp)}
+                    >
+                      View Details
+                    </Button>
+                    {/* {exp.link && (
+                      <Link 
+                        href={exp.link} 
+                        className="text-orange-400 hover:text-orange-300"
+                        isExternal
+                      >
+                        Learn More →
+                      </Link>
+                    )} */}
+                  </div>
                 </CardBody>
               </Card>
             </motion.div>
           ))}
         </div>
       </div>
+      {selectedExp && (
+        <EnhancedProjectModal
+          isOpen={!!selectedExp}
+          onClose={() => setSelectedExp(null)}
+          project={{
+            title: selectedExp.title,
+            longDescription: selectedExp.description,
+            tech: selectedExp.details,
+            images: selectedExp.images,
+            sections: selectedExp.sections
+          }}
+        />
+      )}
     </motion.section>
   );
 };

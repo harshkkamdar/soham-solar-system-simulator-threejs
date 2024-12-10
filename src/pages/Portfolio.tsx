@@ -4,13 +4,13 @@ import SolarSystemShowcase from '../components/portfolio/SolarSystemShowcase';
 import About from '../components/portfolio/About';
 import Experience from '../components/portfolio/Experience';
 import Education from '../components/portfolio/Education';
-import Skills from '../components/portfolio/Skills';
 import Projects from '../components/portfolio/Projects';
 import Contact from '../components/portfolio/Contact';
 import Extracurricular from '../components/portfolio/ExtraCurricular';
 import ParticlesBackground from '../components/portfolio/ParticlesBackground';
 import NavBar from '../components/portfolio/NavBar';
 import { useTheme } from '../contexts/ThemeContext';
+import Research from '../components/portfolio/Research';
 
 function Portfolio() {
   const { theme } = useTheme();
@@ -23,15 +23,15 @@ function Portfolio() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="container mx-auto px-4 py-8"
+        className="container mx-auto px-6 py-12"
       >
         <Hero />
         <SolarSystemShowcase />
         <About />
+        <Research />
         <Experience />
-        <Education />
-        <Skills />
         <Projects />
+        <Education />
         <Extracurricular />
         <Contact />
       </motion.div>

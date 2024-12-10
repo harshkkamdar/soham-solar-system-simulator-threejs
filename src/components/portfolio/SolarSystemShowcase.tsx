@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { Link } from 'react-router-dom';
+import { Button } from "@nextui-org/react";
 
 const SolarSystemShowcase = () => {
   const { theme } = useTheme();
@@ -12,9 +13,9 @@ const SolarSystemShowcase = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-20"
+      className="py-16"
     >
-      <div className="max-w-3xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ x: -20, opacity: 0 }}
@@ -24,7 +25,7 @@ const SolarSystemShowcase = () => {
             className="relative group"
           >
             <img
-              src="/images/solar-system-preview.jpg"
+              src="public/images/soham/solar.png"
               alt="Solar System Simulator Preview"
               className="rounded-lg shadow-xl transition-transform duration-300 group-hover:scale-[1.02]"
             />
@@ -38,7 +39,7 @@ const SolarSystemShowcase = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-600">
+            <h2 className="text-4xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
               Interactive Solar System
             </h2>
             <p className={`text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -47,26 +48,24 @@ const SolarSystemShowcase = () => {
               and interactive camera controls.
             </p>
             <ul className="space-y-3 text-sm">
-              <li className={`flex items-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                • Real-time 3D rendering with Three.js
-              </li>
-              <li className={`flex items-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                • Accurate planetary orbits and rotations
-              </li>
-              <li className={`flex items-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                • Interactive camera controls and planet information
-              </li>
-              <li className={`flex items-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                • Responsive design with NextUI components
-              </li>
+              {['Real-time 3D rendering with Three.js', 
+                'Accurate planetary orbits and rotations',
+                'Interactive camera controls and planet information',
+                'Responsive design with NextUI components'].map((item, index) => (
+                <li key={index} className={`flex items-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                  • {item}
+                </li>
+              ))}
             </ul>
             <div className="flex gap-4 pt-4">
-              <Link 
+              <Button
+                as={Link}
                 to="/solar-system"
-                className="px-6 py-3 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-colors inline-flex items-center"
+                color="warning"
+                className="px-6 py-3 bg-orange-500 text-gray-200 hover:bg-orange-600 transition-colors"
               >
                 Launch Simulator
-              </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
