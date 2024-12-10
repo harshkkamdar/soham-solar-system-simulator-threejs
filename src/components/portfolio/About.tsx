@@ -25,19 +25,21 @@ const About = () => {
           className={`space-y-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}
         >
           <p>
-            I'm a third-year Physics major at Tech University with a focus on Quantum Mechanics and 
-            Computational Physics. My passion lies in understanding the fundamental laws of the universe 
-            and applying computational methods to solve complex physical problems.
+            I'm a high school student at JNIS IBDP with a strong passion for Physics and teaching. 
+            I've demonstrated academic excellence through my IGCSE results, including A* grades in 
+            Physics and Mathematics, and received the International Certificate of Education with Distinction.
           </p>
           <p>
-            Through my coursework and research experiences, I've developed a strong foundation in both 
-            theoretical physics and programming. I'm particularly interested in quantum computing and its 
-            potential applications in solving complex physical systems.
+            My academic journey is complemented by significant research experience, including 
+            co-authoring a Physics research article on relativistic effects in damped harmonic 
+            oscillators with Prof. Preet Sharma from Midwestern State University. This experience 
+            has strengthened my investigative and scientific writing skills.
           </p>
           <p>
-            When I'm not studying or conducting research, I enjoy participating in physics outreach 
-            programs and helping younger students discover the wonders of science through hands-on 
-            demonstrations and experiments.
+            Beyond academics, I'm deeply committed to community service and education, particularly 
+            in teaching chess to underprivileged children and participating in health outreach 
+            programs. I aspire to become a high school physics teacher, combining my passion for 
+            physics with my dedication to education.
           </p>
         </motion.div>
       </div>

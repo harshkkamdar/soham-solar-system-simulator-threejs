@@ -4,47 +4,87 @@ import { Card, CardBody } from "@nextui-org/react";
 
 const activities = [
   {
-    title: "Voluntary Chess Teacher",
+    title: "Chess Program Lead",
     organization: "Sant Kirpal Singh Mission Ashram",
     period: "2022 - Present",
-    description: "Conducted chess program for 22 underprivileged children, enhancing their strategic thinking skills.",
+    description: "Founded and led a comprehensive chess program for underprivileged children, focusing on strategic thinking and cognitive development.",
     achievements: [
-      "Developed comprehensive chess curriculum",
-      "Improved students' problem-solving abilities",
-      "Organized monthly tournaments"
+      "Developed structured chess curriculum from basics to intermediate tactics",
+      "Organized regular tournaments to track progress",
+      "Improved students' problem-solving and analytical skills",
+      "Received positive feedback from ashram management"
+    ]
+  },
+  {
+    title: "Chess Instructor",
+    organization: "Khel Katha - Each One Teach One",
+    period: "2023",
+    description: "Volunteered to teach chess to underprivileged children at a government-run school.",
+    achievements: [
+      "Introduced basic chess concepts and strategies",
+      "Helped develop critical thinking skills",
+      "Created engaging learning materials",
+      "Fostered enthusiasm for the game"
     ]
   },
   {
     title: "Health Outreach Volunteer",
     organization: "Shrimad Rajchandra Mission, Dharampur",
     period: "2023",
-    description: "Assisted medical teams in tribal villages for six weeks, providing primary health check-ups.",
+    description: "Assisted medical teams in tribal villages, providing primary health check-ups.",
     achievements: [
       "Supported healthcare delivery to remote areas",
       "Helped organize medical camps",
-      "Coordinated with local communities"
+      "Coordinated with local communities",
+      "Managed health data documentation"
     ]
   },
   {
     title: "Cultural Performance Lead",
-    organization: "School Theater Production",
-    period: "2022",
-    description: "Played the lead role as 'Beast' in Beauty and the Beast production.",
+    organization: "JNIS School Productions",
+    period: "2022 - 2023",
+    description: "Led major roles in school theatrical productions, including Beast in Beauty and the Beast and Hagrid in Harry Potter.",
     achievements: [
-      "Led ensemble cast of 30 performers",
-      "Contributed to production planning",
+      "Led ensemble casts of 30+ performers",
+      "Contributed to script writing and production planning",
+      "Helped with auditions and rehearsal organization",
       "Enhanced team collaboration skills"
+    ]
+  },
+  {
+    title: "EU MIND Exchange Program Participant",
+    organization: "JNIS International Collaborations",
+    period: "2020",
+    description: "Participated in virtual cultural exchange program with students from the Netherlands.",
+    achievements: [
+      "Engaged in cross-cultural dialogue",
+      "Shared insights about Indian culture and traditions",
+      "Developed international communication skills",
+      "Gained perspective on Dutch culture and society"
+    ]
+  },
+  {
+    title: "International Youth Conference Delegate",
+    organization: "JNIS Model United Nations",
+    period: "2021 - 2023",
+    description: "Participated in and organized multiple MUN conferences, representing various countries and roles.",
+    achievements: [
+      "Led Crisis Department for pan-India conference",
+      "Represented Turkiye in Yemen Civil War committee",
+      "Earned verbal mention for Nigeria cryptocurrency policy debate",
+      "Developed research and diplomatic skills"
     ]
   },
   {
     title: "Martial Arts Practitioner",
     organization: "Nippon Budo Sogo International India",
     period: "2020 - Present",
-    description: "Golden Brown Belt holder, currently pursuing black belt while training others.",
+    description: "Golden Brown Belt holder in Karate, pursuing black belt while mentoring junior students.",
     achievements: [
-      "Assists in training 30 white belt students",
+      "Assists in training white belt students",
       "Participates in regional competitions",
-      "Promotes discipline and physical fitness"
+      "Demonstrates discipline and dedication",
+      "Helps organize training camps"
     ]
   }
 ];

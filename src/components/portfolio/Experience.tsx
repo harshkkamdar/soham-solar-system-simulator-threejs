@@ -1,43 +1,44 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
-import { Card, CardBody, Link } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/react";
 
 const experiences = [
-  // {
-  //   title: "Research Co-author",
-  //   organization: "Midwestern State University, Physics Dept & JNIS",
-  //   period: "2023",
-  //   description: "Preliminary study on relativistic effects on damped harmonic oscillators",
-  //   details: [
-  //     "Co-authored research paper on relativistic damped harmonic oscillators",
-  //     "Developed compact equations for complex physical systems",
-  //     "Collaborated with international researchers"
-  //   ],
-  //   link: "https://rxiv.org/pdf/2409.0113v1.pdf"
-  // },
   {
-    title: "Intern",
-    organization: "Hindustan Electric Motors",
+    title: "Research Co-author",
+    organization: "Midwestern State University, Physics Dept & JNIS",
     period: "2023",
-    description: "Worked on electric motor optimization and development",
+    description: "Co-authored research on relativistic effects in damped harmonic oscillators",
     details: [
-      "Led motor optimization project",
-      "Received management appreciation",
-      "Gained hands-on industry experience"
-    ],
-    link: "https://www.hindmotors.com/"
+      "Conducted research under Prof. Preet Sharma's guidance",
+      "Developed compact modeling equations for complex physical systems",
+      "Enhanced investigative and scientific writing skills",
+      "Established foundation for further exploration in the field"
+    ]
+  },
+  {
+    title: "Crisis Event Organizer",
+    organization: "International Youth Conference (JNIS)",
+    period: "2023",
+    description: "Led Crisis Department for pan-India MUN with 290+ delegates",
+    details: [
+      "Organized night crisis event for top 15 delegates",
+      "Managed logistics and event planning",
+      "Demonstrated leadership and organizational skills",
+      "Coordinated with international participants"
+    ]
+  },
+  {
+    title: "Python & C++ Programming",
+    organization: "ICAD Academy, Mumbai",
+    period: "2021",
+    description: "Completed intermediate level programming courses",
+    details: [
+      "Developed problem-solving skills",
+      "Learned to break down complex problems",
+      "Applied programming concepts to real-world scenarios",
+      "Enhanced logical thinking abilities"
+    ]
   }
-  // {
-  //   title: "Crisis Event Organizer",
-  //   organization: "International Youth Conference (JNIS)",
-  //   period: "2022",
-  //   description: "Managed logistics for international delegates",
-  //   details: [
-  //     "Coordinated with international participants",
-  //     "Organized crisis simulation events",
-  //     "Developed leadership and management skills"
-  //   ]
-  // }
 ];
 
 const Experience = () => {
@@ -88,15 +89,6 @@ const Experience = () => {
                       </li>
                     ))}
                   </ul>
-                  {exp.link && (
-                    <Link 
-                      href={exp.link} 
-                      className="text-orange-400 hover:text-orange-300"
-                      isExternal
-                    >
-                      Learn More →
-                    </Link>
-                  )}
                 </CardBody>
               </Card>
             </motion.div>
