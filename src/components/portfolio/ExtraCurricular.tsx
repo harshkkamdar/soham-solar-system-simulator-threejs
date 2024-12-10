@@ -254,7 +254,7 @@ const Extracurricular = () => {
           longDescription: "Model United Nations Conference Leadership",
           tech: [],
           images: [{
-            url: "public/images/soham/mun/1.JPG",
+            url: "public/images/soham/mun/1.jpg",
             caption: "MUN Conference Leadership"
           }],
           sections: []
