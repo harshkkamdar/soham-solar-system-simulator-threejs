@@ -3,6 +3,13 @@ import { useTheme } from '../../contexts/ThemeContext';
 
 const Hero = () => {
   const { theme } = useTheme();
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   
   return (
     <motion.section
@@ -34,18 +41,18 @@ const Hero = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex justify-center gap-4"
         >
-          <a 
-            href="#contact" 
+          <button 
+            onClick={() => scrollToSection('about')} 
             className="px-6 py-3 bg-orange-500 text-gray-200 rounded-full hover:bg-orange-600 transition-colors"
           >
-            Download Resume
-          </a>
-          <a 
-            href="#projects" 
+            Know More
+          </button>
+          <button 
+            onClick={() => scrollToSection('solar-system-showcase')} 
             className="px-6 py-3 border border-orange-500 rounded-full hover:bg-orange-600/10 transition-colors"
           >
-            View Projects
-          </a>
+            Solar System Simulator
+          </button>
         </motion.div>
       </div>
     </motion.section>

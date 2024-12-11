@@ -25,7 +25,7 @@ const SolarSystemShowcase = () => {
             className="relative group"
           >
             <img
-              src="public/images/soham/solar.png"
+              src="/images/soham/solar.png"
               alt="Solar System Simulator Preview"
               className="rounded-lg shadow-xl transition-transform duration-300 group-hover:scale-[1.02]"
             />

@@ -5,6 +5,9 @@ import CameraHomeButton from "./CameraHomeButton";
 import InfoButton from "./InfoButton";
 import ExitViewButon from "./ExitViewButon";
 import HelpButton from "./HelpButton";
+import { Button, Tooltip } from '@nextui-org/react';
+import { IconArrowBack } from '@tabler/icons-react';
+import { Link } from 'react-router-dom';
 
 const ControlMenu = () => {
     const { cameraState } = useCameraContext();
@@ -36,6 +39,17 @@ const ControlMenu = () => {
           animate={controls}
         >
             <div className="flex gap-x-2">
+                <Tooltip content="Back to Portfolio" placement="bottom">
+                    <Button
+                        as={Link}
+                        to="/"
+                        isIconOnly
+                        color="warning"
+                        variant="flat"
+                    >
+                        <IconArrowBack />
+                    </Button>
+                </Tooltip>
                 <CameraHomeButton />
                 <InfoButton />
                 <HelpButton />

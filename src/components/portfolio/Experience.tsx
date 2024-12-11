@@ -18,7 +18,7 @@ const experiences = [
     link: "https://www.hindmotors.com/",
     images: [
       {
-        url: "public/images/soham/Internship/1.jpg",
+        url: "/images/soham/Internship/1.jpg",
         caption: "Working on motor optimization"
       }
     ],
