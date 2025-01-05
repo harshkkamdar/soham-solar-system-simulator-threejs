@@ -26,23 +26,21 @@ const About = () => {
             className={`space-y-6 md:w-2/3 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}
           >
             <p className="text-lg">
-              I'm a high school student at JNIS IBDP with a strong passion for Physics and teaching. 
-              I've demonstrated academic excellence through my IGCSE results, including A* grades in 
-              Chemistry and Mathematics, and received the International Certificate of Education with Distinction.
+              I'm a high school student at JNIS IBDP with a strong passion for Physics and mathematics.
+              I've demonstrated academic excellence through my IGCSE results and received the
+              International Certificate of Education with Distinction
             </p>
             <p className="text-lg">
-              My academic journey is complemented by significant research experience, including 
-              co-authoring a Physics research article on relativistic effects in damped harmonic 
-              oscillators with Prof. Preet Sharma from Midwestern State University. This experience 
+              My academic journey is complemented by significant research experience, including
+              co-authoring a Physics research article on relativistic effects in damped harmonic
+              oscillators with Prof. Preet Sharma from Midwestern State University. This experience
               has strengthened my investigative and scientific writing skills.
             </p>
             <p className="text-lg">
-              When I'm not studying or conducting research, I enjoy participating in physics outreach 
-              programs and helping younger students discover the wonders of science through hands-on 
-              demonstrations and experiments.
+              When I'm not studying or conducting research, I enjoy playing & teaching Chess.
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
