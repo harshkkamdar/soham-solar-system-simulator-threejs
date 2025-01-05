@@ -28,7 +28,7 @@ const About = () => {
             <p className="text-lg">
               I'm a high school student at JNIS IBDP with a strong passion for Physics and teaching. 
               I've demonstrated academic excellence through my IGCSE results, including A* grades in 
-              Physics and Mathematics, and received the International Certificate of Education with Distinction.
+              Chemistry and Mathematics, and received the International Certificate of Education with Distinction.
             </p>
             <p className="text-lg">
               My academic journey is complemented by significant research experience, including 
