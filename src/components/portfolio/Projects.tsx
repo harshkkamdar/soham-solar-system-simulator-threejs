@@ -59,6 +59,13 @@ const Projects = () => {
   const { theme } = useTheme();
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <motion.section
       id="projects"
@@ -104,8 +111,11 @@ const Projects = () => {
                       <Button
                         color="warning"
                         variant="ghost"
-                        as="a"
-                        href={project.link}
+                        onClick={project.title === "Interactive Solar System" ? 
+                          () => scrollToSection('solar-system-showcase') : 
+                          undefined}
+                        as={project.title === "Interactive Solar System" ? undefined : "a"}
+                        href={project.title === "Interactive Solar System" ? undefined : project.link}
                         target={project.link.startsWith('http') ? "_blank" : "_self"}
                       >
                         {project.title === "Collaborative Science Project" ? "View Details" : "Learn More"}

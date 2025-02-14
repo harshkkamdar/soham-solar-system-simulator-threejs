@@ -52,7 +52,7 @@ const communityService = [
     ]
   }
 ];
-const sports_culture =[
+const sports_culture = [
   {
     title: "Cultural Performance Lead",
     organization: "JNIS School Productions",
@@ -141,9 +141,10 @@ const Extracurricular = () => {
           {title}
         </h3>
         {title === "Geopolitical Affairs" && (
-          <Button 
+          <Button
             color="warning"
-            variant="ghost"
+            size="lg"
+            className="mt-4"
             onPress={() => setShowMUNModal(true)}
           >
             View MUN Photos
@@ -188,9 +189,10 @@ const Extracurricular = () => {
                   </ul>
                 </div>
                 {(activity.images || activity.images) && (
-                  <Button 
+                  <Button
                     color="warning"
-                    variant="ghost"
+                    size="lg"
+                    className="w-full mt-4"
                     onPress={() => setSelectedActivity(activity)}
                   >
                     View Photos
@@ -217,7 +219,7 @@ const Extracurricular = () => {
         <h2 className="text-4xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
           Beyond Academics
         </h2>
-        
+
         {renderActivities(communityService, "Community Service")}
         {renderActivities(sports_culture, "Sports & Culture")}
         {renderActivities(current_affairs, "Geopolitical Affairs")}
