@@ -75,6 +75,13 @@ const sports_culture = [
       "Participates in regional competitions",
       "Demonstrates discipline and dedication",
       "Helps organize training camps"
+    ],
+    images: [
+      {
+        url: "/images/soham/karate/karate1.jpg",
+        caption: "Karate Achievement Certificate",
+        className: "rotate-90 max-h-[70vh] mx-auto"
+      }
     ]
   },
   {
@@ -101,6 +108,12 @@ const current_affairs = [
       "Sole organizer for night crisis event",
       "Managed 15-delegate crisis sim",
       "Coordinated 290+ delegates"
+    ],
+    images: [
+      {
+        url: "/images/soham/mun/1.jpg",
+        caption: "MUN Conference Leadership"
+      }
     ]
   },
   {
@@ -242,7 +255,12 @@ const Extracurricular = () => {
               {
                 title: "Impact",
                 content: selectedActivity.achievements.join(". ")
-              }
+              },
+              ...(selectedActivity.title === "Martial Arts Practitioner" ? [{
+                title: "Certification",
+                content: "Official certification from Nippon Budo Sogo International India demonstrating proficiency in martial arts.",
+                imageClassName: "rotate-90 max-h-[70vh] mx-auto"
+              }] : [])
             ]
           }}
         />

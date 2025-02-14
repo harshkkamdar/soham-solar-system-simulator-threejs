@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { Card, CardBody, Button } from "@nextui-org/react";
-import ProjectModal from './ProjectModal';
+import EnhancedProjectModal from './EnhancedProjectModal';
 
 const projects = [
   {
@@ -10,7 +10,6 @@ const projects = [
     description: "A comprehensive community service initiative focusing on robotics, environmental science, and animal welfare.",
     longDescription: "Led a multifaceted project that included building an autonomous robot (FRAM), conducting plant growth experiments, and surveying local dog populations. The project emphasized cleanliness, hygiene, and community service while applying scientific principles to real-world problems.",
     tech: ["Robotics", "Environmental Science", "Data Analysis", "Community Service"],
-    link: "https://drive.google.com/drive/folders/1-lPUPczIbSy6cpK2EJStY_WcogWGDbp8?usp=share_link",
     images: [
       {
         url: "/images/soham/scienceProject/1.jpg",
@@ -28,15 +27,8 @@ const projects = [
       },
       {
         title: "FRAM Robot Development",
-        content: "We built an autonomous robot (FRAM) to help gather faeces samples safely and efficiently. The robot was designed to navigate urban environments and collect samples for our research."
-      },
-      {
-        title: "Experimental Process",
-        content: "We conducted controlled plant growth experiments using different soil compositions. This involved careful monitoring, data collection, and analysis of plant growth patterns over time."
-      },
-      {
-        title: "Community Impact",
-        content: "Our project addressed both environmental concerns and community hygiene issues, demonstrating practical applications of scientific principles in solving real-world problems."
+        content: "We built an autonomous robot (FRAM) to help gather faeces samples safely and efficiently. The robot was designed to navigate urban environments and collect samples for our research.",
+        link: "/images/soham/scienceProject/FRAM.pdf"
       }
     ]
   },
@@ -107,18 +99,21 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="flex pt-4">
-                    {project.link && (
+                    {project.title === "Interactive Solar System" ? (
                       <Button
                         color="warning"
                         variant="ghost"
-                        onClick={project.title === "Interactive Solar System" ? 
-                          () => scrollToSection('solar-system-showcase') : 
-                          undefined}
-                        as={project.title === "Interactive Solar System" ? undefined : "a"}
-                        href={project.title === "Interactive Solar System" ? undefined : project.link}
-                        target={project.link.startsWith('http') ? "_blank" : "_self"}
+                        onClick={() => scrollToSection('solar-system-showcase')}
                       >
-                        {project.title === "Collaborative Science Project" ? "View Details" : "Learn More"}
+                        Learn More
+                      </Button>
+                    ) : (
+                      <Button
+                        color="warning"
+                        variant="ghost"
+                        onPress={() => setSelectedProject(project)}
+                      >
+                        View Details
                       </Button>
                     )}
                   </div>
@@ -128,16 +123,17 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
       {selectedProject && (
-        <ProjectModal
+        <EnhancedProjectModal
           isOpen={!!selectedProject}
           onClose={() => setSelectedProject(null)}
           project={{
-            title: selectedProject?.title,
-            description: selectedProject?.description,
-            longDescription: selectedProject?.longDescription,
-            tech: selectedProject?.tech,
-            images: selectedProject?.images?.map(image => image.url) || [],
+            title: selectedProject.title,
+            longDescription: selectedProject.longDescription,
+            tech: selectedProject.tech,
+            images: selectedProject.images || [],
+            sections: selectedProject.sections || []
           }}
         />
       )}

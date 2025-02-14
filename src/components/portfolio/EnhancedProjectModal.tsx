@@ -5,11 +5,14 @@ import { useState } from 'react';
 interface ProjectSection {
   title: string;
   content: string;
+  link?: string;
+  imageClassName?: string;
 }
 
 interface ProjectImage {
   url: string;
   caption: string;
+  className?: string;
 }
 
 interface Project {
@@ -71,7 +74,7 @@ const EnhancedProjectModal = ({ isOpen, onClose, project }: EnhancedProjectModal
                           <Image
                             src={image.url}
                             alt={image.caption}
-                            className="w-full rounded-lg transform"
+                            className={`w-full rounded-lg transform ${image.className || ''}`}
                           />
                           <p className="text-center mt-2 text-sm text-gray-500">
                             {image.caption}
@@ -84,7 +87,7 @@ const EnhancedProjectModal = ({ isOpen, onClose, project }: EnhancedProjectModal
                       <Image
                         src={project.images[currentImageIndex].url}
                         alt={project.images[currentImageIndex].caption}
-                        className="w-full rounded-lg transform"
+                        className={`w-full rounded-lg transform ${project.images[currentImageIndex].className || ''}`}
                       />
                       <p className="text-center mt-2 text-sm text-gray-500">
                         {project.images[currentImageIndex].caption}
@@ -119,6 +122,19 @@ const EnhancedProjectModal = ({ isOpen, onClose, project }: EnhancedProjectModal
                   <div key={index}>
                     <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
                     <p className="text-gray-600 dark:text-gray-300">{section.content}</p>
+                    {section.link && (
+                      <div className="mt-4">
+                        <Button
+                          as="a"
+                          href={section.link}
+                          target="_blank"
+                          color="warning"
+                          variant="ghost"
+                        >
+                          View PDF
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
