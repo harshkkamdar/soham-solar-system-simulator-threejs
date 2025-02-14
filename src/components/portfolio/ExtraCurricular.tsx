@@ -80,7 +80,7 @@ const sports_culture = [
       {
         url: "/images/soham/karate/karate1.jpg",
         caption: "Karate Achievement Certificate",
-        className: "rotate-90 max-h-[70vh] mx-auto"
+        className: "mx-auto object-contain h-full w-full" // Centering and fitting the image
       }
     ]
   },
@@ -106,12 +106,12 @@ const current_affairs = [
     achievements: [
       "Led Crisis Dept. for India conference",
       "Sole organizer for night crisis event",
-      "Managed 15-delegate crisis sim",
+      "Managed 15-delegate crisis sim", 
       "Coordinated 290+ delegates"
     ],
     images: [
       {
-        url: "/images/soham/mun/1.jpg",
+        url: "public/images/soham/mun/mun1.jpg",
         caption: "MUN Conference Leadership"
       }
     ]
@@ -153,7 +153,7 @@ const Extracurricular = () => {
         <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
           {title}
         </h3>
-        {title === "Geopolitical Affairs" && (
+        {/* {title === "Geopolitical Affairs" && (
           <Button
             color="warning"
             size="lg"
@@ -162,7 +162,7 @@ const Extracurricular = () => {
           >
             View MUN Photos
           </Button>
-        )}
+        )} */}
       </div>
       <div className={`grid grid-cols-1 ${title === "Geopolitical Affairs" ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-8`}>
         {items.map((activity, index) => (
@@ -256,11 +256,7 @@ const Extracurricular = () => {
                 title: "Impact",
                 content: selectedActivity.achievements.join(". ")
               },
-              ...(selectedActivity.title === "Martial Arts Practitioner" ? [{
-                title: "Certification",
-                content: "Official certification from Nippon Budo Sogo International India demonstrating proficiency in martial arts.",
-                imageClassName: "rotate-90 max-h-[70vh] mx-auto"
-              }] : [])
+
             ]
           }}
         />
