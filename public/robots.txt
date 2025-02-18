@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.mehtasoham.com/sitemap_index.xml 
